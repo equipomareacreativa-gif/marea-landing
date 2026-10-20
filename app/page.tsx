@@ -1,30 +1,33 @@
-import { HeroSection } from "@/components/hero-section"
-import { SocialProof } from "@/components/social-proof"
-import { BentoSection } from "@/components/bento-section"
-import { LargeTestimonial } from "@/components/large-testimonial"
-import { CTASection } from "@/components/cta-section"
-import { FooterSection } from "@/components/footer-section"
+import { Encabezado } from "@/components/marea/encabezado"
+import { Portada } from "@/components/marea/portada"
+import { PorQue } from "@/components/marea/por-que"
+import { Servicios } from "@/components/marea/servicios"
+import { Metodologia } from "@/components/marea/metodologia"
+import { CtaFinal, Pie, WhatsappFlotante } from "@/components/marea/cierre"
 
-export default function LandingPage() {
+export default function Inicio() {
   return (
-    <main className="min-h-screen relative overflow-hidden">
-      {/* Hero - Animated gradient, film grain, water image */}
-      <HeroSection />
+    <>
+      <Encabezado />
+      <main>
+        {/* La página es una marea que sube: cielo y sol arriba, arena, agua cada vez más honda */}
+        <Portada />
+        <PorQue />
+        <Servicios />
+        <Metodologia />
 
-      {/* Propuesta de Valor - Gray with texture, wave divider */}
-      <SocialProof />
+        {/* Nosotros: contenido a definir */}
+        <section id="nosotros" className="bg-arena px-5 pb-16 md:px-10 md:pb-24">
+          <div className="mx-auto max-w-7xl rounded-[2rem] border-2 border-dashed border-azul/25 p-8 md:p-12">
+            <h2 className="titulo text-5xl md:text-7xl">Nosotros</h2>
+            <p className="mt-4 font-bold text-azul/70">[PENDIENTE: contenido de la sección Nosotros]</p>
+          </div>
+        </section>
 
-      {/* Servicios - Dark with glow, wave divider */}
-      <BentoSection />
-
-      {/* Metodologia - White, wave timeline, wave divider */}
-      <LargeTestimonial />
-
-      {/* CTA - Gradient dark, emotional close */}
-      <CTASection />
-
-      {/* Footer */}
-      <FooterSection />
-    </main>
+        <CtaFinal />
+      </main>
+      <Pie />
+      <WhatsappFlotante />
+    </>
   )
 }

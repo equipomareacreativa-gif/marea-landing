@@ -53,12 +53,16 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        "marea-dark": "#063f5d",
-        "marea-accent": "#f7ad1b",
-        "marea-gray": "#d9d9d9",
+        // Marca Marea
+        azul: { DEFAULT: "#063F5D", hondo: "#042B40" },
+        celeste: "#419EBD",
+        sol: "#F7AD1B",
+        arena: "#ECECEC",
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        body: ["var(--font-body)", "Georgia", "serif"],
+        sans: ["var(--font-body)", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -66,6 +70,9 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "sol-gira": { to: { transform: "rotate(360deg)" } },
+        "sol-respira": { "0%, 100%": { transform: "scale(1)", opacity: "0.55" }, "50%": { transform: "scale(1.08)", opacity: "0.75" } },
+        ola: { to: { transform: "translateX(-50%)" } },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -78,6 +85,9 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "sol-gira": "sol-gira 60s linear infinite",
+        "sol-respira": "sol-respira 6s ease-in-out infinite",
+        "ola": "ola 14s linear infinite",
       },
     },
   },
