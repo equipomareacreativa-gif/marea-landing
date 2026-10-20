@@ -14,8 +14,7 @@ export function FooterSection() {
           transition={{ duration: 0.6 }}
           className="flex items-center"
         >
-          <span className="text-white text-2xl font-bold tracking-tight">marea</span>
-          <span className="text-marea-accent text-2xl font-bold animate-dot-pulse">.</span>
+          <img src="/brand/marea-logo-completo.png" alt="marea agencia creativa" className="h-12 w-auto" />
         </motion.div>
 
         <motion.p

@@ -34,11 +34,9 @@ export function Header({ variant = "dark" }: { variant?: "dark" | "light" }) {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center">
-            <span className={`text-2xl font-bold tracking-tight ${isDark ? "text-white" : "text-marea-dark"}`}>
-              marea
-            </span>
-            <span className="text-2xl font-bold text-marea-accent">.</span>
+          <Link href="/" className="flex items-center" aria-label="marea agencia creativa, ir al inicio">
+            <img src="/brand/marea-logo-completo.png" alt="marea agencia creativa" className="hidden md:block h-10 w-auto" />
+            <img src="/brand/marea-logo-corto.png" alt="marea agencia creativa" className="md:hidden h-9 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
@@ -72,9 +70,8 @@ export function Header({ variant = "dark" }: { variant?: "dark" | "light" }) {
             </SheetTrigger>
             <SheetContent side="bottom" className="bg-white border-t border-marea-dark/10 text-marea-dark rounded-t-2xl">
               <SheetHeader>
-                <SheetTitle className="text-left text-2xl font-bold text-marea-dark tracking-tight">
-                  <span>marea</span>
-                  <span className="text-marea-accent">.</span>
+                <SheetTitle className="text-left">
+                  <img src="/brand/marea-isotipo.png" alt="marea agencia creativa" className="h-10 w-10" />
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-2 mt-8">
