@@ -32,8 +32,9 @@ export function Servicios() {
                       alt=""
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
+                      style={s.imagen ? { objectPosition: s.encuadre } : undefined}
                       className={`object-cover transition duration-[1200ms] ease-out group-hover:scale-105 ${
-                        s.imagen ? "object-[50%_60%]" : `opacity-70 ${encuadres[i]}`
+                        s.imagen ? "" : `opacity-70 ${encuadres[i]}`
                       }`}
                     />
                   </div>

@@ -94,21 +94,24 @@ export const servicios = {
       texto: "Fotos y videos que cuentan **historias reales** y que tu audiencia **quiere ver y compartir**.",
       incluye: ["Jornadas de producción", "Reels y videos verticales", "Fotografía de producto y marca", "Edición de video"],
       // Foto de un trabajo real (si queda vacío, se muestra la textura de agua)
-      imagen: "/trabajos/la-bitacora.jpg",
+      imagen: "/trabajos/la-bulonera-ipa.jpg",
+      encuadre: "50% 68%",
     },
     {
       id: "redes",
       titulo: "Gestión de Redes Sociales",
       texto: "Estrategia, diseño y contenido **con coherencia**. Tu marca, **presente y activa** donde importa.",
       incluye: ["Planificación mensual", "Diseño de piezas y copies", "Programación y publicación", "Community management"],
-      imagen: "/equipo/equipo-trabajando.jpg",
+      imagen: "/trabajos/el-pato-vestuario.jpg",
+      encuadre: "50% 42%",
     },
     {
       id: "pauta",
       titulo: "Pauta Publicitaria",
       texto: "Campañas pensadas **para crecer**, no solo para mostrar. Inversión inteligente, **resultados medibles**.",
       incluye: ["Campañas en Meta Ads", "Segmentación de públicos", "Optimización constante", "Reportes de resultados"],
-      imagen: "",
+      imagen: "/trabajos/la-bulonera-fanta.jpg",
+      encuadre: "50% 72%",
     },
   ],
 } as const
@@ -135,19 +138,41 @@ export const nosotros = {
     "Creemos en las personas reales detrás de cada negocio, en el contenido que se siente auténtico y en los procesos claros. Y en que, a veces, lo que una marca necesita es un **cambio de marea**.",
   ],
   foto: "/equipo/equipo.jpg",
-  // Foto chica superpuesta (opcional)
-  fotoSecundaria: "",
+  // Fotos chicas del collage (opcionales)
+  fotosSecundarias: [
+    { foto: "/equipo/equipo-trabajando.jpg", alt: "El equipo de Marea trabajando con sus computadoras" },
+    { foto: "/equipo/equipo-patio.jpg", alt: "Parte del equipo de Marea compartiendo jugos y mate en un patio" },
+  ],
 }
 
+/** Galería de trabajos. Para sumar uno: poner la foto en public/trabajos/ y agregarlo acá. */
 /** Galería de trabajos. Para sumar uno: poner la foto en public/trabajos/ y agregarlo acá. */
 export const trabajos = {
   titulo: "Nuestro laburo",
   items: [
     {
-      foto: "/trabajos/la-bitacora.jpg",
+      foto: "/trabajos/la-bulonera-cenital.jpg",
+      marca: "La Bulonera",
+      tipo: "Producción de contenido",
+      alt: "Una persona con remera de La Bulonera sostiene dos hamburguesas sobre una canasta de papas fritas",
+    },
+    {
+      foto: "/trabajos/la-bitacora-regalo.jpg",
       marca: "La Bitácora",
       tipo: "Producción de contenido",
-      alt: "Tres personas comparten jugos y mate en el patio de La Bitácora",
+      alt: "Una clienta recibe sonriendo una caja de regalo de La Bitácora con flores",
+    },
+    {
+      foto: "/trabajos/el-pato-remera.jpg",
+      marca: "Chacinados El Pato",
+      tipo: "Producción de contenido",
+      alt: "Detalle del logo rojo de Chacinados El Pato en un buzo blanco",
+    },
+    {
+      foto: "/trabajos/el-pato-planta.jpg",
+      marca: "Chacinados El Pato",
+      tipo: "Producción de contenido",
+      alt: "Sala de elaboración de Chacinados El Pato con mesas de acero y cajones blancos",
     },
   ],
   instagram: { texto: "Mirá más de lo que hacemos en Instagram" },
