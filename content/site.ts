@@ -2,6 +2,7 @@
  * Contenido de la landing de Marea.
  * Todos los textos y datos de contacto se editan acá.
  * Los textos están aprobados: cambiarlos solo si Denise lo pide.
+ * Lo que va entre **dobles asteriscos** se muestra en negrita.
  */
 
 export const contacto = {
@@ -30,9 +31,9 @@ export const hero = {
   antetitulo: "HOLA, SOMOS",
   titulo: "marea",
   bajada:
-    "Una agencia creativa que potencia marcas con contenido auténtico, estrategia digital y una mirada que conecta.",
+    "Una agencia creativa que **potencia marcas** con **contenido auténtico**, **estrategia digital** y una **mirada que conecta**.",
   secundaria:
-    "Creatividad con propósito, procesos claros y marcas que se animan a crecer desde su identidad.",
+    "**Creatividad con propósito**, procesos claros y marcas que se animan a **crecer desde su identidad**.",
   cta: "Quiero empezar mi cambio de marea",
 }
 
@@ -42,42 +43,42 @@ export const porQue = {
     {
       icono: "esencia",
       titulo: "Esencia única",
-      texto: "Te ayudamos a diferenciarte sin perder lo que te hace vos. Tu marca, potenciada.",
+      texto: "Te ayudamos a **diferenciarte** sin perder lo que te hace vos. **Tu marca, potenciada.**",
     },
     {
       icono: "compromiso",
       titulo: "Compromiso real",
-      texto: "Nos involucramos como parte de tu equipo. Tu éxito es nuestro éxito.",
+      texto: "Nos involucramos como **parte de tu equipo**. **Tu éxito es nuestro éxito.**",
     },
     {
       icono: "calidad",
       titulo: "Calidad sobre cantidad",
-      texto: "Estrategia y contenido con intención, no por cumplir. Cada pieza cuenta.",
+      texto: "Estrategia y contenido **con intención**, no por cumplir. **Cada pieza cuenta.**",
     },
   ],
 } as const
 
 export const servicios = {
   titulo: "Nuestros servicios",
-  bajada: "Soluciones creativas integrales para que tu marca destaque en el mundo digital.",
+  bajada: "**Soluciones creativas integrales** para que tu marca **destaque** en el mundo digital.",
   items: [
     {
       id: "contenido",
       titulo: "Producción de Contenido",
-      texto: "Fotos y videos que cuentan historias reales. Contenido que tu audiencia quiere ver y compartir.",
+      texto: "Fotos y videos que cuentan **historias reales**. Contenido que tu audiencia **quiere ver y compartir**.",
       // Cuando haya fotos o videos de trabajos reales, poner la ruta acá (ej: "/trabajos/contenido.jpg")
       imagen: "",
     },
     {
       id: "redes",
       titulo: "Gestión de Redes Sociales",
-      texto: "Estrategia, diseño y contenido con coherencia. Tu marca, presente y activa donde importa.",
+      texto: "Estrategia, diseño y contenido **con coherencia**. Tu marca, **presente y activa** donde importa.",
       imagen: "",
     },
     {
       id: "pauta",
       titulo: "Pauta Publicitaria",
-      texto: "Campañas pensadas para crecer, no solo para mostrar. Inversión inteligente, resultados medibles.",
+      texto: "Campañas pensadas **para crecer**, no solo para mostrar. Inversión inteligente, **resultados medibles**.",
       imagen: "",
     },
   ],
@@ -85,7 +86,7 @@ export const servicios = {
 
 export const metodologia = {
   titulo: "Nuestra metodología",
-  bajada: "Un proceso claro y transparente para que sepas exactamente cómo trabajamos.",
+  bajada: "Un proceso **claro y transparente** para que sepas exactamente **cómo trabajamos**.",
   pasos: [
     "Brief de Marca",
     "Planificación Mensual",
@@ -100,7 +101,7 @@ export const metodologia = {
 export const ctaFinal = {
   titulo: "SI LLEGASTE HASTA ACÁ, NO ES CASUALIDAD.",
   texto:
-    "Tal vez viste nuestro trabajo, alguien nos recomendó o simplemente tu marca está pidiendo un cambio de marea.",
+    "Tal vez viste nuestro trabajo, alguien nos recomendó o simplemente tu marca está pidiendo un **cambio de marea**.",
   boton: "Hablemos de tu marca",
 }
 

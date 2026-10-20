@@ -5,6 +5,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { useRef } from "react"
 import { Instagram, Mail, MapPin } from "lucide-react"
 import { contacto, ctaFinal, footer, linkContacto } from "@/content/site"
+import { Destacado } from "./destacado"
 import { Aparece, IconoWhatsapp, Ola, Sol } from "./piezas"
 
 export function CtaFinal() {
@@ -34,7 +35,7 @@ export function CtaFinal() {
             {ctaFinal.titulo}
           </Aparece>
           <Aparece demora={0.1} className="mx-auto mt-8 max-w-2xl text-lg text-white/90 md:text-2xl">
-            {ctaFinal.texto}
+            <Destacado texto={ctaFinal.texto} claro />
           </Aparece>
           <Aparece demora={0.2} className="mt-10">
             <a

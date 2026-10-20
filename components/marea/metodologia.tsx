@@ -3,6 +3,7 @@
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring } from "framer-motion"
 import { useRef, useState } from "react"
 import { metodologia } from "@/content/site"
+import { Destacado } from "./destacado"
 import { Aparece } from "./piezas"
 
 const pasos = metodologia.pasos
@@ -52,7 +53,7 @@ export function Metodologia() {
             {metodologia.titulo}
           </Aparece>
           <Aparece demora={0.1} className="max-w-md text-lg text-azul/80 md:pb-3 md:text-xl">
-            {metodologia.bajada}
+            <Destacado texto={metodologia.bajada} />
           </Aparece>
         </div>
 

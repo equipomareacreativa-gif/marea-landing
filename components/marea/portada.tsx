@@ -5,6 +5,8 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { useRef } from "react"
 import { hero, linkContacto } from "@/content/site"
 import { Ola, Sol } from "./piezas"
+import { Logotipo } from "./logotipo"
+import { Destacado } from "./destacado"
 
 export function Portada() {
   const reducir = useReducedMotion()
@@ -12,9 +14,8 @@ export function Portada() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   // Al bajar, el agua sube y el sol se hunde un poco: arranca el "cambio de marea".
   const aguaY = useTransform(scrollYProgress, [0, 1], ["0%", "-18%"])
-    const contacto = linkContacto()
+  const contacto = linkContacto()
   const externo = contacto.startsWith("http")
-  const letras = hero.titulo.split("")
 
   return (
     <section
@@ -50,30 +51,27 @@ export function Portada() {
           {hero.antetitulo}
         </motion.p>
 
-        <h1 className="titulo -ml-[0.04em] flex items-end text-[clamp(5.5rem,29vw,20rem)] leading-[0.85]">
+        {/* "marea" con el logotipo real; sube desde el agua al cargar */}
+        <h1 className="mt-4 flex w-full max-w-[66rem] items-end gap-[1.5%] md:mt-6">
           <span className="sr-only">{hero.titulo}.</span>
-          <span aria-hidden="true" className="flex">
-            {letras.map((l, i) => (
-              <motion.span
-                key={i}
-                initial={reducir ? false : { y: "0.6em", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.9, delay: 0.2 + i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block"
-              >
-                {l}
-              </motion.span>
-            ))}
-          </span>
+          <motion.span
+            aria-hidden="true"
+            initial={reducir ? false : { clipPath: "inset(100% 0 0 0)", y: "18%" }}
+            animate={{ clipPath: "inset(0% 0 0 0)", y: "0%" }}
+            transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="block min-w-0 flex-1"
+          >
+            <Logotipo className="block h-auto w-full text-white" />
+          </motion.span>
           {/* El punto de marea es el sol */}
           <motion.span
             aria-hidden="true"
-            initial={reducir ? false : { y: "-1.6em", opacity: 0, rotate: -90 }}
-            animate={{ y: 0, opacity: 1, rotate: 0 }}
+            initial={reducir ? false : { y: "-160%", opacity: 0, rotate: -90 }}
+            animate={{ y: "0%", opacity: 1, rotate: 0 }}
             transition={{ duration: 1.3, delay: 0.75, ease: [0.34, 1.3, 0.64, 1] }}
-            className="mb-[0.06em] ml-[0.02em] inline-block"
+            className="mb-[0.4%] block w-[10%] shrink-0"
           >
-            <Sol priority className="h-[0.34em] w-[0.34em]" />
+            <Sol priority className="block aspect-square w-full" />
           </motion.span>
         </h1>
 
@@ -84,8 +82,8 @@ export function Portada() {
           className="mt-8 grid gap-8 md:mt-12 md:grid-cols-[1.3fr_1fr] md:items-end md:gap-16"
         >
           <div className="max-w-xl">
-            <p className="text-xl leading-snug text-white md:text-2xl">{hero.bajada}</p>
-            <p className="mt-4 text-base italic leading-relaxed text-white/80 md:text-lg">{hero.secundaria}</p>
+            <p className="text-xl leading-snug text-white/85 md:text-2xl"><Destacado texto={hero.bajada} claro /></p>
+            <p className="mt-4 text-base leading-relaxed text-white/75 md:text-lg"><Destacado texto={hero.secundaria} claro /></p>
           </div>
           <div className="md:justify-self-end">
             <a

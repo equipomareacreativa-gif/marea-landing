@@ -1,6 +1,7 @@
 "use client"
 
 import { porQue } from "@/content/site"
+import { Destacado } from "./destacado"
 import { Aparece } from "./piezas"
 
 export function PorQue() {
@@ -16,7 +17,7 @@ export function PorQue() {
             <Aparece como="li" demora={i * 0.1} key={item.titulo}>
               <article className="group relative grid gap-3 border-b border-azul/15 py-8 md:py-10">
                 <h3 className="titulo text-[2.25rem] md:text-5xl">{item.titulo}</h3>
-                <p className="max-w-[46ch] text-lg text-azul/75">{item.texto}</p>
+                <p className="max-w-[46ch] text-lg text-azul/75"><Destacado texto={item.texto} /></p>
                 {/* Línea amarilla que crece al pasar el mouse */}
                 <span
                   aria-hidden="true"

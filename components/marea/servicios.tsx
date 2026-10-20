@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { servicios } from "@/content/site"
+import { Destacado } from "./destacado"
 import { Aparece } from "./piezas"
 
 // Mientras no haya fotos de trabajos reales, cada bloque muestra otra parte del agua.
@@ -17,7 +18,7 @@ export function Servicios() {
               {servicios.titulo}
             </Aparece>
             <Aparece demora={0.1} className="max-w-md text-lg text-white/80 md:pb-3">
-              {servicios.bajada}
+              <Destacado texto={servicios.bajada} claro />
             </Aparece>
           </div>
 
@@ -36,7 +37,7 @@ export function Servicios() {
                   <div className="relative">
                     <span aria-hidden="true" className="mb-6 block h-[3px] w-10 bg-sol transition-all duration-500 group-hover:w-20" />
                     <h3 className="titulo text-[2.5rem] md:text-5xl">{s.titulo}</h3>
-                    <p className="mt-4 max-w-[34ch] text-white/80">{s.texto}</p>
+                    <p className="mt-4 max-w-[34ch] text-white/80"><Destacado texto={s.texto} claro /></p>
                   </div>
                 </article>
               </Aparece>

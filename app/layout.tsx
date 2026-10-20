@@ -2,10 +2,11 @@ import type { Metadata, Viewport } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { fontBody, fontDisplay } from "./fonts"
 import { contacto, hero } from "@/content/site"
+import { textoPlano } from "@/components/marea/destacado"
 import "./globals.css"
 
 const sitio = contacto.sitioUrl || "https://v0-pointer-ai-landing-page-one-pi-57.vercel.app"
-const descripcion = hero.bajada
+const descripcion = textoPlano(hero.bajada)
 
 export const metadata: Metadata = {
   metadataBase: new URL(sitio),
