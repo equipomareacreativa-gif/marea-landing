@@ -21,6 +21,7 @@ export const contacto = {
 export const header = {
   menu: [
     { nombre: "Servicios", href: "#servicios" },
+    { nombre: "Trabajos", href: "#trabajos" },
     { nombre: "Metodología", href: "#metodologia" },
     { nombre: "Nosotros", href: "#nosotros" },
   ],
@@ -92,15 +93,15 @@ export const servicios = {
       titulo: "Producción de Contenido",
       texto: "Fotos y videos que cuentan **historias reales** y que tu audiencia **quiere ver y compartir**.",
       incluye: ["Jornadas de producción", "Reels y videos verticales", "Fotografía de producto y marca", "Edición de video"],
-      // Cuando haya fotos o videos de trabajos reales, poner la ruta acá (ej: "/trabajos/contenido.jpg")
-      imagen: "",
+      // Foto de un trabajo real (si queda vacío, se muestra la textura de agua)
+      imagen: "/trabajos/la-bitacora.jpg",
     },
     {
       id: "redes",
       titulo: "Gestión de Redes Sociales",
       texto: "Estrategia, diseño y contenido **con coherencia**. Tu marca, **presente y activa** donde importa.",
       incluye: ["Planificación mensual", "Diseño de piezas y copies", "Programación y publicación", "Community management"],
-      imagen: "",
+      imagen: "/equipo/equipo-trabajando.jpg",
     },
     {
       id: "pauta",
@@ -133,8 +134,23 @@ export const nosotros = {
     "Somos un equipo creativo —producción, diseño, edición, community y estrategia— que se involucra en cada marca **como si fuera propia**.",
     "Creemos en las personas reales detrás de cada negocio, en el contenido que se siente auténtico y en los procesos claros. Y en que, a veces, lo que una marca necesita es un **cambio de marea**.",
   ],
-  // Cuando esté la foto del equipo, poner la ruta acá (ej: "/equipo/marea.jpg")
-  foto: "",
+  foto: "/equipo/equipo.jpg",
+  // Foto chica superpuesta (opcional)
+  fotoSecundaria: "",
+}
+
+/** Galería de trabajos. Para sumar uno: poner la foto en public/trabajos/ y agregarlo acá. */
+export const trabajos = {
+  titulo: "Nuestro laburo",
+  items: [
+    {
+      foto: "/trabajos/la-bitacora.jpg",
+      marca: "La Bitácora",
+      tipo: "Producción de contenido",
+      alt: "Tres personas comparten jugos y mate en el patio de La Bitácora",
+    },
+  ],
+  instagram: { texto: "Mirá más de lo que hacemos en Instagram" },
 }
 
 export const ctaFinal = {

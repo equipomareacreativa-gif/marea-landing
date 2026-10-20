@@ -24,21 +24,24 @@ export function Servicios() {
 
           <ul className="mt-12 grid gap-4 md:mt-16 md:grid-cols-3 md:gap-5">
             {servicios.items.map((s, i) => (
-              <Aparece como="li" demora={i * 0.12} key={s.id}>
-                <article className="group relative flex min-h-[30rem] flex-col justify-end overflow-hidden rounded-[2rem] bg-azul-hondo p-7 md:min-h-[38rem] md:p-8">
-                  <Image
-                    src={s.imagen || "/images/hero-bg.jpg"}
-                    alt=""
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className={`object-cover opacity-60 grayscale-[35%] transition duration-[1200ms] ease-out group-hover:scale-105 group-hover:opacity-80 group-hover:grayscale-0 ${s.imagen ? "" : encuadres[i]}`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-azul-hondo via-azul-hondo/75 to-azul-hondo/20" />
-                  <div className="relative">
+              <Aparece como="li" demora={i * 0.12} key={s.id} className="h-full">
+                <article className="group flex h-full flex-col overflow-hidden rounded-[2rem] bg-azul-hondo">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={s.imagen || "/images/hero-bg.jpg"}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className={`object-cover transition duration-[1200ms] ease-out group-hover:scale-105 ${
+                        s.imagen ? "object-[50%_60%]" : `opacity-70 ${encuadres[i]}`
+                      }`}
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-7 md:p-8">
                     <span aria-hidden="true" className="mb-6 block h-[3px] w-10 bg-sol transition-all duration-500 group-hover:w-20" />
                     <h3 className="titulo text-[2.5rem] md:text-5xl">{s.titulo}</h3>
-                    <p className="mt-4 max-w-[34ch] text-white/80"><Destacado texto={s.texto} claro /></p>
-                    <div className="mt-6 border-t border-white/15 pt-5">
+                    <p className="mb-6 mt-4 max-w-[34ch] text-white/80"><Destacado texto={s.texto} claro /></p>
+                    <div className="mt-auto border-t border-white/15 pt-5">
                       <p className="text-sm font-semibold text-celeste">Incluye</p>
                       <ul className="mt-3 space-y-2">
                         {s.incluye.map((x) => (
