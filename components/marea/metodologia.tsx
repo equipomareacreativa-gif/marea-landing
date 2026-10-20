@@ -61,7 +61,7 @@ export function Metodologia() {
           <div className="relative hidden md:block" style={{ aspectRatio: `${ANCHO} / ${ALTO}` }}>
             <svg viewBox={`0 0 ${ANCHO} ${ALTO}`} className="absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
               <path d={caminoH} fill="none" stroke="var(--azul)" strokeOpacity="0.12" strokeWidth="3" strokeDasharray="2 10" strokeLinecap="round" />
-              <motion.path d={caminoH} fill="none" stroke="var(--celeste)" strokeWidth="5" strokeLinecap="round" style={{ pathLength: largo }} />
+              <motion.path d={caminoH} fill="none" stroke="var(--azul)" strokeWidth="3" strokeLinecap="round" style={{ pathLength: largo }} />
             </svg>
             <ol className="absolute inset-0">
               {pasos.map((paso, i) => {
@@ -106,7 +106,7 @@ export function Metodologia() {
               aria-hidden="true"
             >
               <path d={caminoV} fill="none" stroke="var(--azul)" strokeOpacity="0.12" strokeWidth="3" strokeDasharray="2 9" strokeLinecap="round" />
-              <motion.path d={caminoV} fill="none" stroke="var(--celeste)" strokeWidth="5" strokeLinecap="round" style={{ pathLength: largo }} />
+              <motion.path d={caminoV} fill="none" stroke="var(--azul)" strokeWidth="3" strokeLinecap="round" style={{ pathLength: largo }} />
               {pasos.map((paso, i) => {
                 const y = FILA * i + FILA / 2
                 return (

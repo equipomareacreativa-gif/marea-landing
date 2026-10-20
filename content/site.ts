@@ -66,7 +66,7 @@ export const servicios = {
       titulo: "Producción de Contenido",
       texto: "Fotos y videos que cuentan historias reales. Contenido que tu audiencia quiere ver y compartir.",
       // Cuando haya fotos o videos de trabajos reales, poner la ruta acá (ej: "/trabajos/contenido.jpg")
-      imagen: "/images/hero-bg.jpg",
+      imagen: "",
     },
     {
       id: "redes",

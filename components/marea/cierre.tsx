@@ -22,7 +22,7 @@ export function CtaFinal() {
       <div className="grano relative isolate overflow-hidden bg-azul px-5 pb-28 pt-16 text-white md:px-10 md:pb-44 md:pt-24">
         <div aria-hidden="true" className="absolute inset-x-0 -bottom-[44vw] -z-10 flex justify-center md:-bottom-[24vw]">
           <motion.div style={reducir ? undefined : { y: solY }} className="relative h-[80vw] w-[80vw] md:h-[38vw] md:w-[38vw]">
-            <div className="absolute inset-[-30%] rounded-full bg-[radial-gradient(circle,rgba(247,173,27,0.45)_0%,transparent_60%)] blur-2xl" />
+            <div className="absolute inset-[-30%] rounded-full bg-[radial-gradient(circle,rgba(247,173,27,0.25)_0%,transparent_60%)] blur-2xl" />
             <Sol className="h-full w-full" />
           </motion.div>
         </div>

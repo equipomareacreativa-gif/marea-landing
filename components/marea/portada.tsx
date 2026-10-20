@@ -12,8 +12,7 @@ export function Portada() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   // Al bajar, el agua sube y el sol se hunde un poco: arranca el "cambio de marea".
   const aguaY = useTransform(scrollYProgress, [0, 1], ["0%", "-18%"])
-  const solY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"])
-  const contacto = linkContacto()
+    const contacto = linkContacto()
   const externo = contacto.startsWith("http")
   const letras = hero.titulo.split("")
 
@@ -21,16 +20,8 @@ export function Portada() {
     <section
       ref={ref}
       id="inicio"
-      className="grano relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-gradient-to-b from-celeste via-[#1f6f92] to-azul text-white"
+      className="grano relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-gradient-to-b from-[#1a6687] via-azul to-azul text-white"
     >
-      {/* Brillo de sol difuso */}
-      <motion.div
-        style={reducir ? undefined : { y: solY }}
-        className="absolute -right-[30vw] -top-[25vw] -z-10 h-[90vw] w-[90vw] md:-right-[10vw] md:-top-[20vw] md:h-[60vw] md:w-[60vw]"
-        aria-hidden="true"
-      >
-        <div className="h-full w-full animate-sol-respira rounded-full bg-[radial-gradient(circle,rgba(255,236,190,0.9)_0%,rgba(255,206,110,0.45)_28%,transparent_62%)] mix-blend-screen blur-2xl motion-reduce:animate-none" />
-      </motion.div>
 
       {/* Agua */}
       <motion.div
@@ -46,7 +37,7 @@ export function Portada() {
           sizes="100vw"
           className="object-cover opacity-40 mix-blend-soft-light"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1f6f92] via-transparent to-azul/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-azul via-transparent to-azul/70" />
       </motion.div>
 
       <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 pb-10 pt-28 md:px-10 md:pt-36">
