@@ -46,7 +46,7 @@ export function Portada() {
           initial={reducir ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-body text-lg font-semibold text-white/90 md:text-2xl"
+          className="font-body text-2xl font-semibold tracking-wide text-white/90 md:text-4xl"
         >
           {hero.antetitulo}
         </motion.p>
