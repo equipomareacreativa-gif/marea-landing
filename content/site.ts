@@ -15,7 +15,7 @@ export const contacto = {
   mail: "equipo.mareacreativa@gmail.com",
   ciudad: "Chivilcoy, Buenos Aires",
   // Dominio propio, para SEO y Open Graph (ej: "https://marea.com.ar")
-  sitioUrl: "",
+  sitioUrl: "https://www.somosmarea.com.ar",
 }
 
 export const header = {
