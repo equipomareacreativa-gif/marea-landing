@@ -25,7 +25,7 @@ export function Servicios() {
           <ul className="mt-12 grid gap-4 md:mt-16 md:grid-cols-3 md:gap-5">
             {servicios.items.map((s, i) => (
               <Aparece como="li" demora={i * 0.12} key={s.id}>
-                <article className="group relative flex min-h-[24rem] flex-col justify-end overflow-hidden rounded-[2rem] bg-azul-hondo p-7 md:min-h-[32rem] md:p-8">
+                <article className="group relative flex min-h-[30rem] flex-col justify-end overflow-hidden rounded-[2rem] bg-azul-hondo p-7 md:min-h-[38rem] md:p-8">
                   <Image
                     src={s.imagen || "/images/hero-bg.jpg"}
                     alt=""
@@ -38,6 +38,17 @@ export function Servicios() {
                     <span aria-hidden="true" className="mb-6 block h-[3px] w-10 bg-sol transition-all duration-500 group-hover:w-20" />
                     <h3 className="titulo text-[2.5rem] md:text-5xl">{s.titulo}</h3>
                     <p className="mt-4 max-w-[34ch] text-white/80"><Destacado texto={s.texto} claro /></p>
+                    <div className="mt-6 border-t border-white/15 pt-5">
+                      <p className="text-sm font-semibold text-celeste">Incluye</p>
+                      <ul className="mt-3 space-y-2">
+                        {s.incluye.map((x) => (
+                          <li key={x} className="flex items-center gap-3 text-[0.95rem] text-white/90">
+                            <span aria-hidden="true" className="h-[2px] w-4 shrink-0 bg-celeste" />
+                            {x}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </article>
               </Aparece>

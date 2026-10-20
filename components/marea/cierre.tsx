@@ -46,6 +46,17 @@ export function CtaFinal() {
               <IconoWhatsapp className="h-6 w-6" />
               {ctaFinal.boton}
             </a>
+            {contacto.mail && (
+              <p className="mt-6 text-base text-white/75">
+                {ctaFinal.mailIntro}{" "}
+                <a
+                  href={`mailto:${contacto.mail}`}
+                  className="break-all font-semibold text-white underline decoration-celeste decoration-2 underline-offset-4 hover:text-sol"
+                >
+                  {contacto.mail}
+                </a>
+              </p>
+            )}
           </Aparece>
         </div>
       </div>

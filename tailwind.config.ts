@@ -73,6 +73,7 @@ const config = {
         "sol-gira": { to: { transform: "rotate(360deg)" } },
         "sol-respira": { "0%, 100%": { transform: "scale(1)", opacity: "0.55" }, "50%": { transform: "scale(1.08)", opacity: "0.75" } },
         ola: { to: { transform: "translateX(-50%)" } },
+        marquee: { to: { transform: "translateX(-50%)" } },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -88,6 +89,7 @@ const config = {
         "sol-gira": "sol-gira 60s linear infinite",
         "sol-respira": "sol-respira 6s ease-in-out infinite",
         "ola": "ola 14s linear infinite",
+        marquee: "marquee 55s linear infinite",
       },
     },
   },

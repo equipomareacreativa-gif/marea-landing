@@ -21,7 +21,7 @@ const caminoH = (() => {
 })()
 
 // Recorrido vertical (celular): la ola baja serpenteando.
-const FILA = 112
+const FILA = 168
 const ANCHO_V = 64
 const xV = (y: number) => ANCHO_V / 2 + 18 * Math.sin((y / FILA) * Math.PI)
 const caminoV = (() => {
@@ -46,7 +46,7 @@ export function Metodologia() {
   const largo = reducir ? 1 : progreso
 
   return (
-    <section id="metodologia" className="relative overflow-hidden bg-arena px-5 py-20 md:px-10 md:py-32">
+    <section id="metodologia" className="relative overflow-hidden bg-arena px-5 pb-12 pt-20 md:px-10 md:pb-16 md:pt-32">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-end">
           <Aparece como="h2" className="titulo text-[clamp(3rem,11vw,7.5rem)]">
@@ -59,7 +59,7 @@ export function Metodologia() {
 
         <div ref={ref} className="mt-14 md:mt-24">
           {/* Desktop: ola horizontal */}
-          <div className="relative hidden md:block" style={{ aspectRatio: `${ANCHO} / ${ALTO}` }}>
+          <div className="relative mb-36 hidden md:block" style={{ aspectRatio: `${ANCHO} / ${ALTO}` }}>
             <svg viewBox={`0 0 ${ANCHO} ${ALTO}`} className="absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
               <path d={caminoH} fill="none" stroke="var(--azul)" strokeOpacity="0.12" strokeWidth="3" strokeDasharray="2 10" strokeLinecap="round" />
               <motion.path d={caminoH} fill="none" stroke="var(--azul)" strokeWidth="3" strokeLinecap="round" style={{ pathLength: largo }} />
@@ -71,7 +71,7 @@ export function Metodologia() {
                 const on = i < activos
                 return (
                   <li
-                    key={paso}
+                    key={paso.titulo}
                     className="absolute w-40 -translate-x-1/2 text-center"
                     style={{
                       left: `${(x / ANCHO) * 100}%`,
@@ -88,9 +88,10 @@ export function Metodologia() {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span
-                      className={`absolute left-1/2 top-6 block w-36 -translate-x-1/2 font-bold leading-tight transition-all duration-700 ${on ? "opacity-100" : "-translate-y-2 opacity-30"}`}
+                      className={`absolute left-1/2 top-6 block w-[10.5rem] -translate-x-1/2 transition-all duration-700 ${on ? "opacity-100" : "-translate-y-2 opacity-30"}`}
                     >
-                      {paso}
+                      <span className="block font-bold leading-tight">{paso.titulo}</span>
+                      <span className="mt-2 block text-sm leading-snug text-azul/70">{paso.texto}</span>
                     </span>
                   </li>
                 )
@@ -112,7 +113,7 @@ export function Metodologia() {
                 const y = FILA * i + FILA / 2
                 return (
                   <circle
-                    key={paso}
+                    key={paso.titulo}
                     cx={xV(y)}
                     cy={y}
                     r={i < activos ? 10 : 7}
@@ -127,12 +128,13 @@ export function Metodologia() {
             <ol>
               {pasos.map((paso, i) => (
                 <li
-                  key={paso}
+                  key={paso.titulo}
                   className={`flex flex-col justify-center transition-opacity duration-700 ${i < activos ? "opacity-100" : "opacity-35"}`}
                   style={{ height: FILA }}
                 >
                   <span className="titulo text-4xl text-azul">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="text-lg font-bold leading-tight">{paso}</span>
+                  <span className="text-lg font-bold leading-tight">{paso.titulo}</span>
+                  <span className="mt-1.5 text-[0.95rem] leading-snug text-azul/75">{paso.texto}</span>
                 </li>
               ))}
             </ol>

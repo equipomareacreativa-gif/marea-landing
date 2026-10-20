@@ -41,18 +41,18 @@ export function Portada() {
         <div className="absolute inset-0 bg-gradient-to-b from-azul via-transparent to-azul/70" />
       </motion.div>
 
-      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 pb-10 pt-28 md:px-10 md:pt-36">
+      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-5 pb-6 pt-28 md:px-10 md:pb-2 md:pt-28">
         <motion.p
           initial={reducir ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-body text-2xl font-semibold tracking-wide text-white/90 md:text-4xl"
+          className="font-body text-2xl font-semibold tracking-wide text-white/90 md:text-3xl"
         >
           {hero.antetitulo}
         </motion.p>
 
         {/* "marea" con el logotipo real; sube desde el agua al cargar */}
-        <h1 className="mt-4 flex w-full max-w-[66rem] items-end gap-[1.5%] md:mt-6">
+        <h1 className="mt-3 flex w-full max-w-[66rem] items-end gap-[1.5%] md:mt-4 md:max-w-[min(60rem,calc((100svh-25rem)*5.2))]">
           <span className="sr-only">{hero.titulo}.</span>
           <motion.span
             aria-hidden="true"
@@ -79,19 +79,25 @@ export function Portada() {
           initial={reducir ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="mt-8 grid gap-8 md:mt-12 md:grid-cols-[1.3fr_1fr] md:items-end md:gap-16"
+          className="mt-7 grid gap-7 md:mt-9 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-12"
         >
           <div className="max-w-xl">
             <p className="text-xl leading-snug text-white/85 md:text-2xl"><Destacado texto={hero.bajada} claro /></p>
             <p className="mt-4 text-base leading-relaxed text-white/75 md:text-lg"><Destacado texto={hero.secundaria} claro /></p>
           </div>
-          <div className="md:justify-self-end">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center md:flex-col md:items-end md:justify-self-end lg:flex-row lg:items-center">
             <a
               href={contacto}
               {...(externo ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="boton-sol w-full text-lg md:w-auto"
+              className="boton-sol w-full text-base sm:w-auto sm:text-lg"
             >
               {hero.cta}
+            </a>
+            <a
+              href={hero.ctaSecundario.href}
+              className="inline-flex w-full items-center justify-center rounded-full border-2 border-white/40 px-7 py-[0.875rem] text-base font-semibold text-white transition-colors hover:border-white hover:bg-white/10 sm:w-auto"
+            >
+              {hero.ctaSecundario.texto}
             </a>
           </div>
         </motion.div>
